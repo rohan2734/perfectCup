@@ -2,7 +2,7 @@
 session_start();
 
 //Open a new connection to the MySQL server
-$mysqli = new mysqli('localhost', 'root', 'rohandevaki123', 'perfectcup');
+$mysqli = new mysqli('localhost', 'root', 'ur_root_password', 'perfectcup');
 
 //Output any connection error
 if ($mysqli->connect_error) {
