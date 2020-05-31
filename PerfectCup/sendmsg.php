@@ -1,7 +1,7 @@
 <?php
 
 //Open a new connection to the MySQL server
-$mysqli = new mysqli('localhost', 'root', 'ur_root_password', 'perfectcup');
+$mysqli = new mysqli('localhost', 'root', '', 'perfectcup');
 
 //Output any connection error
 if ($mysqli->connect_error) {
@@ -12,7 +12,7 @@ $fname = mysqli_real_escape_string($mysqli, $_POST['fname']);
 $email = mysqli_real_escape_string($mysqli, $_POST['email']);
 $message= mysqli_real_escape_string($mysqli, $_POST['message']);
 
-$email2 = "ur_mail@gmail.com";
+$email2 = "jagandevaki1@gmail.com";
 $subject = "Test Message";
 
 if (strlen($fname) > 50) {
@@ -49,15 +49,15 @@ if (strlen($fname) > 50) {
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'ur_mail@gmail.com';                 // SMTP username
-    $mail->Password = 'ur_Account_password';                           // SMTP password
+    $mail->Username = 'jagandevaki1@gmail.com';                 // SMTP username
+    $mail->Password = '';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
 	$mail->AddReplyTo($email);
     $mail->From = $email2;
     $mail->FromName = $fname;
-    $mail->addAddress('ur_mail@gmail.com', 'Admin');     // Add a recipient
+    $mail->addAddress('jagandevaki1@gmail.com', 'Admin');     // Add a recipient
 
     $mail->isHTML(true);                                  // Set email format to HTML
 
